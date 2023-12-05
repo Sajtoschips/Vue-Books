@@ -10,8 +10,9 @@
     <book-table v-if="!isListComp" :bookList="bookList" />
 
 
-    <div v-for="">
-
+    <div v-for="book in bookList">
+        {{ book.title }}
+        <book-card :konyv="book"></book-card>
     </div>
 
 </template>
@@ -21,6 +22,7 @@ import { ref } from 'vue';
 import books from '../bookdata'
 import BookTable from '../components/BookTable.vue';
 import BookList from '../components/BookList.vue';
+import BookCard from '../components/BookCard.vue'
 
 
 let bookList = ref([])
