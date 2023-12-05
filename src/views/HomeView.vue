@@ -6,8 +6,14 @@
     <br>
     <span>Megjelenités táblázatban: </span><input type="checkbox" @change="isListComp = !isListComp">
 
-    <book-list v-if="isListComp" :bookList="bookList" />
+    <book-list @nevKuldes="adatFogado" v-if="isListComp" :bookList="bookList" />
     <book-table v-if="!isListComp" :bookList="bookList" />
+
+
+    <div v-for="">
+
+    </div>
+
 </template>
 
 <script setup>
@@ -21,9 +27,12 @@ let bookList = ref([])
 let isListComp = ref(true);
 bookList.value = books
 
+const nev = ref("")
 
-
-
+const adatFogado = (par) => {
+    console.log(par);
+    nev.value = par
+}
 
 
 </script>
